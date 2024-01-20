@@ -3,6 +3,7 @@ package com.mmsoftware100.businesscard
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -22,13 +23,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    BusinessCard()
+                    // Greeting("Android")
                 }
             }
         }
     }
 }
 
+@Composable
+fun BusinessCard(){
+    Column {
+        Text("Hello")
+        Text(text = "World")
+    }
+}
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -39,8 +48,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun BusinessCardPreview() {
     BusinessCardTheme {
-        Greeting("Android")
+        BusinessCard()
     }
 }
